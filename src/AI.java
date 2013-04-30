@@ -10,8 +10,8 @@ public class AI {
 
 	public void findInvalidMoves() {
 
-		for (int i = 0; i < 9; i++) {
-			for (int j = 0; j < 9; j++) {
+		for (int i = 0; i < 9; i++) { //for each row
+			for (int j = 0; j < 9; j++) { //for each column
 				ArrayList<Integer> invalidMoves = new ArrayList<Integer>();
 				Cell c = Board[i][j];
 				final int row = i;
@@ -29,7 +29,7 @@ public class AI {
 					if (val != 0 && !invalidMoves.contains(val)) { // if the
 																	// value
 																	// hasnt
-																	// alreayd
+																	// already
 																	// been
 																	// added to
 																	// the list
@@ -167,15 +167,21 @@ public class AI {
 	}
 
 	public boolean run() {
-		boolean done=true;
+		boolean done = true;
 		for (int i = 0; i <= 8; i++) {
 			for (int j = 0; j <= 8; j++) {
 				Cell c = Board[i][j];
 				if (c.getValue() == 0) {
-					done=false;
+					done = false;
 					ArrayList<Integer> invalidMoves = c.getInvalidOptions();
-					if(invalidMoves.contains(1)&& invalidMoves.contains(2) &&invalidMoves.contains(3) && invalidMoves.contains(4) && invalidMoves.contains(5)&& invalidMoves.contains(6)
-							&& invalidMoves.contains(7) && invalidMoves.contains(8)&&invalidMoves.contains(9)){
+					if (invalidMoves.contains(1) && invalidMoves.contains(2)
+							&& invalidMoves.contains(3)
+							&& invalidMoves.contains(4)
+							&& invalidMoves.contains(5)
+							&& invalidMoves.contains(6)
+							&& invalidMoves.contains(7)
+							&& invalidMoves.contains(8)
+							&& invalidMoves.contains(9)) {
 						return false;
 					}
 					for (int k = 1; k <= 9; k++) {
@@ -183,17 +189,15 @@ public class AI {
 														// invalid move at this
 														// cell, try it
 							c.setValue(k);
-							Board[i][j]=c;
-							//printBoard();
+							Board[i][j] = c;
 							findInvalidMoves();
-							if(run()==true){
+							if (run() == true) {
 								return true;
-							}else{
-								c.setValue(0);
-								//findInvalidMoves();
-								//return false;
+							} else {
+								c.setValue(0); // reset the value to try a new
+												// one
 							}
-							
+
 						}
 					}
 				}
@@ -219,7 +223,5 @@ public class AI {
 			System.out.println();
 		}
 	}
-		
-	
-	}
 
+}
