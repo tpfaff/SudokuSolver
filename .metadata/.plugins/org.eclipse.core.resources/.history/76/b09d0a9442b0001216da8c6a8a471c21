@@ -1,0 +1,4 @@
+
+public class SubGrid {
+	Cell gameGrid[][]=new Cell[3][3]; //9 cell grid
+}

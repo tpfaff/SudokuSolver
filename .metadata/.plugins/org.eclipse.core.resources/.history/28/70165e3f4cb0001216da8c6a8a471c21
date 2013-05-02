@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+
+
+public class Cell {
+	private int row,column;
+	private int value;
+	private ArrayList<Moves> invalidMoves=new ArrayList<Moves>();
+	
+	
+	public Cell(int row,int column, int value)
+	{
+		this.row=row;
+		this.column=column;
+		this.value=value;
+		
+	}
+	
+	
+}

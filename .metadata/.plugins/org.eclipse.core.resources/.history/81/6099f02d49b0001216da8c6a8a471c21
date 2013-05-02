@@ -1,0 +1,9 @@
+
+public class LargeGrid {
+	SubGrid [][] gameBoard=new SubGrid[3][3]; //81 cells total
+
+	public LargeGrid(){
+		gameBoard[0][0]=1;
+	}
+
+}

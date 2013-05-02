@@ -1,0 +1,4 @@
+
+public class SmallGrid {
+	Cell gameGrid[][]=new Cell[9][9]; //81 cell grid
+}

@@ -1,0 +1,21 @@
+
+public class main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		phone p=new phone(4.0f,"htc","android");
+		tablet t=new tablet(7.0f,"asus","android");
+		
+		Object[] arr=new Object[2];
+		arr[0]=p;
+		arr[1]=t;
+		
+		for(Object o:arr){
+			
+			
+		}
+	}
+
+}
