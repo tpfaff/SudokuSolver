@@ -7,6 +7,27 @@ static long startTime=0,endTime=0,totalTime=0;
 	public static void main(String[] args) {
 		ArrayList<Integer> initialSet=new ArrayList<Integer>();
 		Collections.addAll(initialSet,
+				/*0,0,0,8,0,1,0,0,3,
+				0,0,9,0,0,0,2,1,0,
+				5,0,0,0,0,3,8,0,0,
+				0,7,3,1,0,0,5,8,0,
+				1,0,0,0,0,0,0,0,6,
+				0,9,5,0,0,7,1,3,0,
+				0,0,7,9,0,0,0,0,5,
+				0,1,6,0,0,0,7,0,0,
+				2,0,0,7,0,6,0,0,0*/
+				///easy puzzle
+				0,9,0,6,0,1,0,0,0,
+				0,0,0,0,3,0,9,0,1,
+				0,3,0,2,0,8,0,0,0,
+				7,0,9,0,0,0,0,0,4,
+				0,4,0,3,0,7,0,9,0,
+				8,0,3,0,1,0,5,0,7,
+				0,5,0,7,0,2,4,1,9,
+				9,0,4,0,5,0,7,0,6,
+				0,1,0,9,0,6,0,5,8
+				//medium puzzle
+				/*
 				0,0,0,8,0,1,0,0,3,
 				0,0,9,0,0,0,2,1,0,
 				5,0,0,0,0,3,8,0,0,
@@ -16,6 +37,20 @@ static long startTime=0,endTime=0,totalTime=0;
 				0,0,7,9,0,0,0,0,5,
 				0,1,6,0,0,0,7,0,0,
 				2,0,0,7,0,6,0,0,0
+				 */
+				///extreme puzzle
+				
+				/*0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,5,2,3,
+				0,0,0,0,0,0,0,1,8,
+				0,0,0,0,0,0,0,0,0,
+				0,0,9,0,7,4,0,6,0,
+				0,0,4,6,1,0,0,0,7,
+				0,5,8,0,4,3,0,0,0,
+				0,4,0,0,2,0,0,3,0,
+				0,6,7,0,8,1,0,9,4*/
+				//Evil puzzle
+				
 				); //-1 represents an empty cell. addall fills the arrraylist with the board values
 			GameBoard gb=new GameBoard(initialSet);
 			AI intelligence=new AI(gb.getBoard());
