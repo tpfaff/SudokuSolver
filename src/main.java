@@ -32,7 +32,7 @@ static long startTime=0,endTime=0,totalTime=0;
 				totalTime=endTime-startTime;
 				System.out.println("No Solutions!" +" Thought for "+totalTime+" ms");
 			}
-			
+
 	}
 
 }

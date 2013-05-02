@@ -25,6 +25,12 @@ public class Cell {
 	public void setValue(int value){
 		this.value=value;
 	}
+	public int getRow(){
+		return row;
+	}
+	public int getColumn(){
+		return column; //e
+	}
 	public void setCoordinates(int row,int column){
 		this.row=row;
 		this.column=column;

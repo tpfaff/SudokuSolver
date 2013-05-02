@@ -15,6 +15,7 @@ public class GameBoard {
 					int what = initialSet.get(listIndex);
 					Board[i][j] = new Cell();
 					Board[i][j].setValue(initialSet.get(listIndex));
+					Board[i][j].setCoordinates(i,j);
 					listIndex++;
 				}
 

@@ -168,41 +168,63 @@ public class AI {
 
 	public boolean run() {
 		boolean done = true;
-		for (int i = 0; i <= 8; i++) {
+		int maxConstraints=0;
+		int constrainedRow,constrainedColumn;
+		Cell constrainedCell=new Cell();
+		for (int a = 0; a <= 8; a++) {
+			for (int b = 0; b <= 8; b++) {
+				Cell cell=Board[a][b];
+				if(cell.getValue()==0){
+					//if this is the most constrained cell seen, and its empty
+					done=false;
+					if(cell.getInvalidOptions().size()>maxConstraints)
+					maxConstraints=cell.getInvalidOptions().size();
+					constrainedCell=cell;
+				}
+				
+			}
+		}
+		if(done)
+			return true;
+		
+				ArrayList<Integer> invalidMoves = constrainedCell.getInvalidOptions();
+				if (invalidMoves.contains(1) && invalidMoves.contains(2)
+						&& invalidMoves.contains(3)
+						&& invalidMoves.contains(4)
+						&& invalidMoves.contains(5)
+						&& invalidMoves.contains(6)
+						&& invalidMoves.contains(7)
+						&& invalidMoves.contains(8)
+						&& invalidMoves.contains(9)) {
+					done=false;
+					return done;
+				}
+				
+				for (int k = 1; k <= 9; k++) {
+					if (!invalidMoves.contains(k)) {
+						constrainedCell.setValue(k);
+						Board[constrainedCell.getRow()][constrainedCell.getColumn()] = constrainedCell;
+						//printBoard();
+						findInvalidMoves();
+						if (run() == true) {
+							return true;
+						} else {
+							constrainedCell.setValue(0); // reset the value to try a new
+						}		// one
+		/*for (int i = 0; i <= 8; i++) {
 			for (int j = 0; j <= 8; j++) {
 				Cell c = Board[i][j];
 				if (c.getValue() == 0) {
 					done = false;
-					ArrayList<Integer> invalidMoves = c.getInvalidOptions();
-					if (invalidMoves.contains(1) && invalidMoves.contains(2)
-							&& invalidMoves.contains(3)
-							&& invalidMoves.contains(4)
-							&& invalidMoves.contains(5)
-							&& invalidMoves.contains(6)
-							&& invalidMoves.contains(7)
-							&& invalidMoves.contains(8)
-							&& invalidMoves.contains(9)) {
-						return false;
-					}
-					for (int k = 1; k <= 9; k++) {
-						if (!invalidMoves.contains(k)) {// if this isnt an
+					
+					*/
+					// if this isnt an
 														// invalid move at this
 														// cell, try it
-							c.setValue(k);
-							Board[i][j] = c;
-							findInvalidMoves();
-							if (run() == true) {
-								return true;
-							} else {
-								c.setValue(0); // reset the value to try a new
-												// one
+							
 							}
 
 						}
-					}
-				}
-			}
-		}
 		return done;
 	}
 
